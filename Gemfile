@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails'
 
 # Auth
+gem 'bcrypt'
 gem 'jwt_sessions'
 
 # Trailblazer
