@@ -10,7 +10,6 @@ gem 'puma'
 gem 'rails'
 
 # Auth
-gem 'devise'
 gem 'jwt_sessions'
 
 # Trailblazer
