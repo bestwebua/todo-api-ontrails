@@ -1,0 +1,17 @@
+require: rubocop-rspec
+
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Metrics/LineLength:
+  Max: 120
