@@ -17,6 +17,9 @@ gem 'jwt_sessions'
 gem 'trailblazer-endpoint', github: 'trailblazer/trailblazer-endpoint'
 gem 'trailblazer-rails'
 
+# Serializer
+gem 'jsonapi-rails', github: 'jsonapi-rb/jsonapi-rails'
+
 # Documentation
 gem 'dox'
 
