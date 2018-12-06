@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/trailblazer/trailblazer-endpoint.git
+  revision: 0c80379a4ae977aa427092aade2aa07882f9381d
+  specs:
+    trailblazer-endpoint (0.0.1)
+      dry-matcher
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,18 +50,47 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    ast (2.4.0)
+    bcrypt (3.1.12)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
+    coderay (1.1.2)
     concurrent-ruby (1.1.3)
     crass (1.0.4)
+    declarative (0.0.10)
+    declarative-builder (0.1.0)
+      declarative-option (< 0.2.0)
+    declarative-option (0.1.0)
+    devise (4.5.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+    diff-lcs (1.3)
+    disposable (0.4.4)
+      declarative (>= 0.0.9, < 1.0.0)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber (< 0.2.0)
+    dox (1.1.0)
+      rails (>= 4.0)
+      rspec-core
+    dry-matcher (0.7.0)
     erubi (1.7.1)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    jaro_winkler (1.5.1)
+    jwt (2.1.0)
+    jwt_sessions (2.3.0)
+      jwt (>= 2.1, < 3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -75,7 +111,20 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
+    orm_adapter (0.5.0)
+    parallel (1.12.1)
+    parser (2.5.3.0)
+      ast (~> 2.4.0)
     pg (1.1.3)
+    powerpack (0.1.2)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.6.0)
+      byebug (~> 10.0)
+      pry (~> 0.10)
+    pry-rails (0.3.8)
+      pry (>= 0.10.4)
     puma (3.12.0)
     rack (2.0.6)
     rack-test (1.1.0)
@@ -104,10 +153,52 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
+    rainbow (3.0.0)
     rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    reform (2.2.4)
+      disposable (>= 0.4.1)
+      representable (>= 2.4.0, < 3.1.0)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
+    rubocop (0.61.1)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.4.0)
+    rubocop-rails (1.5.0)
+      railties (>= 3.0)
+      rubocop (~> 0.53)
+    rubocop-rspec (1.30.1)
+      rubocop (>= 0.60.0)
+    ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -123,8 +214,32 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.20.3)
     thread_safe (0.3.6)
+    trailblazer (2.1.0.rc1)
+      declarative
+      trailblazer-macro (>= 2.1.0.rc1, < 2.2.0)
+      trailblazer-macro-contract (= 2.1.0.rc1)
+      trailblazer-operation
+    trailblazer-activity (0.7.1)
+      hirb
+      trailblazer-context
+    trailblazer-context (0.1.2)
+    trailblazer-loader (0.1.2)
+    trailblazer-macro (2.1.0.rc1)
+    trailblazer-macro-contract (2.1.0.rc1)
+      reform (>= 2.2.0, < 3.0.0)
+    trailblazer-operation (0.4.1)
+      trailblazer-activity (>= 0.7.1, < 0.8.0)
+      trailblazer-context (>= 0.1.1, < 0.3.0)
+    trailblazer-rails (2.1.7)
+      railties (>= 4.0.0)
+      trailblazer (>= 2.1.0.beta1, < 2.2.0)
+      trailblazer-loader (>= 0.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    uber (0.1.0)
+    unicode-display_width (1.4.0)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -134,17 +249,26 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  byebug
+  devise
+  dox
+  jwt_sessions
   listen (>= 3.0.5, < 3.2)
-  pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
-  rails (~> 5.2.1)
+  pg
+  pry-byebug
+  pry-rails
+  puma
+  rails
+  rspec-rails
+  rubocop-rails
+  rubocop-rspec
   spring
   spring-watcher-listen (~> 2.0.0)
+  trailblazer-endpoint!
+  trailblazer-rails
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.2
+   1.17.1
