@@ -3,6 +3,10 @@ class Endpoint < Trailblazer::Endpoint
     created: Dry::Matcher::Case.new(
       match:   ->(result) { result.success? && result['model.action'] == :new },
       resolve: ->(result) { result }
+    ),
+    invalid: Dry::Matcher::Case.new(
+      match:   ->(result) { result.failure? && result['result.contract.default'] && result['result.contract.default'].failure? },
+      resolve: ->(result) { result }
     )
   )
 
