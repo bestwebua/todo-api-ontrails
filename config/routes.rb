@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  post 'signup', controller: :signup, action: :create
+  scope :auth do
+    post '/', to: 'users#create'
+    post '/remove_me', to: 'users#destroy'
+
+    # post '/sign_in', to: 'authentication#create'
+    # get '/sign_out', to: 'authentication#destroy'
+  end
 end
