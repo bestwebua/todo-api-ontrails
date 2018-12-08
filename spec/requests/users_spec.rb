@@ -20,7 +20,7 @@ RSpec.describe 'User API', type: :request do
 
   describe 'POST /api/auth' do
     context 'valid request' do
-      before { binding.pry; post '/api/auth', params: valid_attributes, headers: headers }
+      before { post '/api/auth', params: valid_attributes, headers: headers }
 
       it 'creates a new user' do
         expect(response).to have_http_status(201)
