@@ -11,7 +11,7 @@ module Users::Contract
     validate :password_ok?
 
     def password_ok?
-      errors.add(:password, I18n.t('errors.password_missmatch')) if password != password_confirmation
+      errors.add(:password_confirmation, I18n.t('errors.password_mismatch')) if password != password_confirmation
     end
   end
 end
