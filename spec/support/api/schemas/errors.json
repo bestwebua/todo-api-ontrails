@@ -1,0 +1,22 @@
+{
+ "errors": [
+   {
+     "title": "Invalid email",
+     "detail": "Email can't be blank",
+     "source": {
+     }
+   },
+   {
+     "title": "Invalid password",
+     "detail": "Password can't be blank",
+     "source": {
+     }
+   },
+   {
+     "title": "Invalid password",
+     "detail": "Password is too short (minimum is 6 characters)",
+     "source": {
+     }
+   }
+ ]
+}
