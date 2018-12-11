@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope :api do
+  scope :api, module: :v1, constraints: Api::VersionService.new(:v1, true) do
     scope :auth do
       post '/', to: 'users#create'
       post '/remove_me', to: 'users#destroy'

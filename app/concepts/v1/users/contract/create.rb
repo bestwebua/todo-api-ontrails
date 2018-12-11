@@ -1,6 +1,6 @@
 require 'reform/form/validation/unique_validator'
 
-module Users::Contract
+module V1::Users::Contract
   class Create < Reform::Form
     property :email
     property :password

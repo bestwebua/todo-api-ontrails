@@ -1,8 +1,7 @@
 module ControllerSpecHelper
-  def valid_headers
+  def valid_headers(version = 'v1')
     {
-      'Accept': 'application/vnd.api+json',
       'Content-Type': 'application/vnd.api+json'
-    }
+    }.merge('Accept': "application/vnd.api.#{version}")
   end
 end
