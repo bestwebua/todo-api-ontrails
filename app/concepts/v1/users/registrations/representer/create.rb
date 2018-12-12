@@ -1,6 +1,6 @@
-module V1::Users::Representer
+module V1::Users::Registrations::Representer
   class Create < JSONAPI::Serializable::Resource
-    type 'users'
+    type 'user'
     attributes :email
   end
 end
