@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'database_cleaner'
+require 'dox'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -22,6 +23,14 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+Dir[Rails.root.join('spec/docs/**/*.rb')].each { |file| require file }
+
+Dox.configure do |config|
+  config.header_file_path = Rails.root.join('spec/docs/v1/descriptions/header.md')
+  config.desc_folder_path = Rails.root.join('spec/docs/v1/descriptions')
+  config.headers_whitelist = ['Accept', 'Authorization']
 end
 
 RSpec.configure do |config|
