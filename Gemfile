@@ -40,6 +40,7 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'json_matchers'
+  gem 'rspec_file_chef'
 end
 
 group :development do

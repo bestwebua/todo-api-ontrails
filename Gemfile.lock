@@ -82,6 +82,8 @@ GEM
     dox (1.1.0)
       rails (>= 4.0)
       rspec-core
+    dry-configurable (0.7.0)
+      concurrent-ruby (~> 1.0)
     dry-matcher (0.7.0)
     erubi (1.7.1)
     factory_bot (4.11.1)
@@ -205,6 +207,8 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    rspec_file_chef (0.1.2)
+      dry-configurable
     rubocop (0.61.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -285,6 +289,7 @@ DEPENDENCIES
   rails
   reform-rails
   rspec-rails
+  rspec_file_chef
   rubocop-rails
   rubocop-rspec
   shoulda-matchers
