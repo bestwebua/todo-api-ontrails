@@ -1,4 +1,4 @@
-class Endpoint < Trailblazer::Endpoint
+class ApiEndpoint < Trailblazer::Endpoint
   Matcher = Dry::Matcher.new(
     created: Dry::Matcher::Case.new(
       match:   ->(result) { result.success? && result['model.action'] == :new },
@@ -11,6 +11,6 @@ class Endpoint < Trailblazer::Endpoint
   )
 
   def matcher
-    Endpoint::Matcher
+    ApiEndpoint::Matcher
   end
 end

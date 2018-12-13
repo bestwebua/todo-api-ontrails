@@ -1,5 +1,5 @@
 module V1
   class ApiController < ApplicationController
-    include DefaultEndpoints
+    include ApiEndpoints
   end
 end

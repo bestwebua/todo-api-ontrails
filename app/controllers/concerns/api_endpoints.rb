@@ -1,4 +1,4 @@
-module DefaultEndpoints
+module ApiEndpoints
   def default_handler
     lambda do |model|
       model.created do |result|
@@ -16,6 +16,6 @@ module DefaultEndpoints
   end
 
   def endpoint(operation_class, _options = {}, &block)
-    Endpoint.call(operation_class, default_handler, { params: params.to_unsafe_h }, &block)
+    ApiEndpoint.call(operation_class, default_handler, { params: params.to_unsafe_h }, &block)
   end
 end
