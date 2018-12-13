@@ -3,7 +3,7 @@ module V1
     def index
       render file: Api::DocSelectorService.call(self), layout: false
       rescue ActionView::MissingTemplate
-        render html: 'Documentation api-file not found.', status: :not_found
+        render html: I18n.t('errors.file_not_found'), status: :not_found
     end
   end
 end

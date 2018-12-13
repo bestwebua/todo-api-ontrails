@@ -1,3 +1,4 @@
 en:
   errors:
+    file_not_found: 'Documentation api-file not found.'
     password_mismatch: 'passwords are different'
