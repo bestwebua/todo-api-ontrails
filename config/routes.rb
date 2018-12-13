@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: redirect('api/documentation')
+  get '/', to: redirect('api/documentation/v1')
 
   scope :api do
     get '/documentation/:version', to: 'documentation#index'
