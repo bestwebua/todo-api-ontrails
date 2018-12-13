@@ -1,4 +1,4 @@
 en:
   errors:
-    file_not_found: 'Documentation api-file not found.'
+    file_not_found: 'Documentation api-file not build yet or requested api version not exists.'
     password_mismatch: 'passwords are different'
