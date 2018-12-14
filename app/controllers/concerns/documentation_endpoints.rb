@@ -5,8 +5,8 @@ module DocumentationEndpoints
         render file: result[:doc_path], layout: false
       end
 
-      match.not_exists do |_result|
-        render html: I18n.t('errors.file_not_found'), status: :not_found
+      match.not_exists do |result|
+        render html: result[:errors][:doc_path], status: :not_found
       end
     end
   end
