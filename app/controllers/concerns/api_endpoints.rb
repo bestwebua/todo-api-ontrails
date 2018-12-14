@@ -2,15 +2,13 @@ module ApiEndpoints
   def default_handler
     lambda do |model|
       model.created do |result|
-        render jsonapi: result[:model],
-        **result[:renderer_options],
-        status: :created
+        render jsonapi: result[:model], **result[:renderer_options], status: :created
       end
 
       model.invalid do |result|
         render jsonapi_errors: result['contract.default'].errors,
-        class: { 'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors },
-        status: :unprocessable_entity
+               class: { 'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors },
+               status: :unprocessable_entity
       end
     end
   end

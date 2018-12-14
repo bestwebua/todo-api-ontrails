@@ -21,9 +21,6 @@ gem 'reform-rails'
 # Serializer
 gem 'jsonapi-rails', github: 'jsonapi-rb/jsonapi-rails'
 
-# Documentation
-gem 'dox'
-
 group :development, :test do
   # Debuggers
   gem 'pry-byebug'
@@ -41,6 +38,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'json_matchers'
   gem 'rspec_file_chef'
+
+  # Documentation
+  gem 'dox'
 end
 
 group :development do
@@ -48,5 +48,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
