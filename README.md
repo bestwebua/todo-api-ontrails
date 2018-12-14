@@ -4,7 +4,7 @@ Simple Todo RESTful JSON API with trailblazer abstraction and documentation. Imp
 
 ## Features
 1. User registration
-2. API documentation
+2. Independent API documentation, :3000/api/documentation/v[version]
 3. Smart API versionization with default version, accepts version in headers
 
 For rebuild current api doc just use:
