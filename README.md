@@ -1,24 +1,28 @@
-# README
+# Todo API on Trails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple Todo RESTful JSON API with trailblazer abstraction and documentation. Implemented with Rails 5.2.2, demo: http://todo-api-ontrails.herokuapp.com
 
-Things you may want to cover:
+## Features
+1. User registration
+2. API documentation
+3. Smart API versionization with default version, accepts version in headers
 
-* Ruby version
+For rebuild current api doc just use:
+```bash
+rails api:v1:docs
+```
 
-* System dependencies
+## Technology summary
 
-* Configuration
+* Ruby 2.5.3
+* Rails 5.2.2, trailblazer-rails, trailblazer-endpoint, reform-rails, jsonapi-rails
+* Documentation: Dox, Aglio
+* Testing: rspec, rspec-rails, rspec_file_chef, factory_bot_rails, shoulda-matchers, faker, database_cleaner
 
-* Database creation
+## Contributing
 
-* Database initialization
+Bug reports and pull requests are welcome on GitHub at https://github.com/bestwebua/todo-api-ontrails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
