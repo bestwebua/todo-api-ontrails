@@ -297,10 +297,9 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   trailblazer-endpoint!
   trailblazer-rails
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
