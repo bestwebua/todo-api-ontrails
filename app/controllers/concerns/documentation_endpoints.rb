@@ -1,11 +1,11 @@
 module DocumentationEndpoints
   def documentation_handler
-    lambda do |html_doc|
-      html_doc.exists do |result|
+    lambda do |match|
+      match.exists do |result|
         render file: result[:doc_path], layout: false
       end
 
-      html_doc.not_exists do |_result|
+      match.not_exists do |_result|
         render html: I18n.t('errors.file_not_found'), status: :not_found
       end
     end
