@@ -10,7 +10,9 @@ module V1::Lib::Service
       end
 
       def read(token)
-        JWT.decode(token, HMAC_SECRET).first
+        body = JWT.decode(token, HMAC_SECRET).first
+        HashWithIndifferentAccess.new(body)
+        rescue JWT::DecodeError
       end
     end
   end
