@@ -4,7 +4,7 @@ module Documentations::Operation
     fail :file_not_found, fail_fast: true
 
     def doc_exist?(ctx, **)
-      ctx[:doc_path] = Api::DocSelectorService.call(ctx[:params]['version'])
+      ctx[:doc_path] = Api::DocSelectorService.call(ctx[:params][:version])
       ctx[:doc_path].exist?
     end
 
