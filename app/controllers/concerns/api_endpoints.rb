@@ -10,6 +10,14 @@ module ApiEndpoints
                class: { 'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors },
                status: :unprocessable_entity
       end
+
+      match.email_token_invalid do |result|
+        render json: result, status: :unprocessable_entity
+      end
+
+      match.user_already_verified do |result|
+        render json: result, status: :unprocessable_entity
+      end
     end
   end
 

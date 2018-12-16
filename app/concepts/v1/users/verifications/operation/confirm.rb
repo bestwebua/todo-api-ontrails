@@ -11,7 +11,7 @@ module V1::Users::Verifications::Operation
     end
 
     def invalid_token(ctx, **)
-      ctx[:errors] = { email_token: I18n.t('errors.invalid_token') }
+      ctx[:errors] = { user_verification_errors: { email_token: I18n.t('errors.invalid_token') } }
     end
 
     def confirm_user!(ctx, **)
@@ -21,7 +21,7 @@ module V1::Users::Verifications::Operation
     end
 
     def user_already_verified(ctx, **)
-      ctx[:errors] = { user_account: I18n.t('errors.user_already_verified') }
+      ctx[:errors] = { user_verification_errors: { user_account: I18n.t('errors.user_already_verified') } }
     end
   end
 end
