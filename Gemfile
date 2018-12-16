@@ -11,6 +11,7 @@ gem 'rails'
 
 # Auth
 gem 'bcrypt'
+gem 'jwt'
 gem 'jwt_sessions'
 
 # Trailblazer
