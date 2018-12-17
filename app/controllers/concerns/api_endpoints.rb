@@ -11,6 +11,10 @@ module ApiEndpoints
                status: :unprocessable_entity
       end
 
+      match.verified do |result|
+        render head :no_content, status: :ok
+      end
+
       match.email_token_invalid do |result|
         render json: result, status: :unprocessable_entity
       end

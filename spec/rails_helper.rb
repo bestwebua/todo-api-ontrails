@@ -33,6 +33,8 @@ Dox.configure do |config|
   config.headers_whitelist = ['Accept', 'Authorization']
 end
 
+JsonMatchers.schema_root = 'spec/support/schemas'
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true

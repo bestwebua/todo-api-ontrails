@@ -20,7 +20,7 @@
     + Body
 
             {
-              "email": "norberto@ortiz.name",
+              "email": "collin@luettgengreenholt.info",
               "password": "123456",
               "password_confirmation": "123456"
             }
@@ -38,7 +38,7 @@
                 "id": "1",
                 "type": "user",
                 "attributes": {
-                  "email": "norberto@ortiz.name"
+                  "email": "collin@luettgengreenholt.info"
                 }
               },
               "jsonapi": {
@@ -86,4 +86,32 @@
               "jsonapi": {
                 "version": "1.0"
               }
+            }
+
+# Group User verification
+
+
+## Index action [/users/verification]
+
+
+### User verification [GET /api/users/verification]
+
+
++ Request verificatioin fails
+**GET**&nbsp;&nbsp;`/api/users/verification`
+
+    + Headers
+
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+
++ Response 422
+
+    + Headers
+
+            Content-Type: application/vnd.api+json; charset=utf-8
+
+    + Body
+
+            {
+              "email_token": "Invalid or expired token. Please retry account confirmation"
             }

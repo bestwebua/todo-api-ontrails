@@ -8,6 +8,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pg'
 gem 'puma'
 gem 'rails'
+gem 'sidekiq'
 
 # Auth
 gem 'bcrypt'

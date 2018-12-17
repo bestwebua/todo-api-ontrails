@@ -3,7 +3,7 @@ module V1::Users::Verifications::Operation
     step :token_valid?
     fail :invalid_token, fail_fast: true
     step :confirm_user!
-    fail :already_verified, fail_fast: true
+    fail :user_already_verified, fail_fast: true
 
     def token_valid?(ctx, **)
       V1::Lib::Service::EmailToken.read(ctx[:params][:email_token])
