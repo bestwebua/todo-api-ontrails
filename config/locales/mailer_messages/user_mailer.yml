@@ -1,0 +1,6 @@
+en:
+  user_mailer:
+    confirmation:
+      hello: Hello
+      activate: Activate your account
+      confirm: Confirm

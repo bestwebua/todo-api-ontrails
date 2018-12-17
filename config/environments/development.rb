@@ -35,6 +35,12 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.default_sender_email = 'no-reply@localhost'
+  config.user_verification_path = 'http://localhost/api/users/verification'
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

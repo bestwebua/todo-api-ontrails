@@ -4,7 +4,8 @@ module V1::Lib::Step::Mailers::Users
 
     def self.call(ctx, model:, **)
       token = V1::Lib::Service::EmailToken.create(user_id: model.id)
-      UserMailer.confirmation(model, token, path).deliver_later
+      user_verification_path = Rails.application.config.user_verification_path
+      UserMailer.confirmation(model, token, user_verification_path).deliver_later
     end
   end
 end
