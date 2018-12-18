@@ -6,21 +6,19 @@ module ApiEndpoints
       end
 
       match.invalid do |result|
-        render jsonapi_errors: result['contract.default'].errors,
-               class: { 'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors },
+
+        temp = result['contract.default'] ? result['contract.default'].errors : result[:errors]
+
+        render jsonapi_errors: temp,
+               class: {
+                        'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors,
+                        'Hash': V1::Lib::Representer::VerificationErrorsSerializer
+                      },
                status: :unprocessable_entity
       end
 
       match.verified do |result|
-        render head :no_content, status: :ok
-      end
-
-      match.email_token_invalid do |result|
-        render json: result, status: :unprocessable_entity
-      end
-
-      match.user_already_verified do |result|
-        render json: result, status: :unprocessable_entity
+        render :no_content
       end
     end
   end

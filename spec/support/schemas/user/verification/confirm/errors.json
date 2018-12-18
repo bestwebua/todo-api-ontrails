@@ -1,12 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "email_token": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "email_token"
-  ]
+ "errors": [
+   {
+     "email_token": "Invalid or expired token. Please retry account confirmation",
+     "user_account": "This user account has already been verified"
+   }
+ ]
 }
