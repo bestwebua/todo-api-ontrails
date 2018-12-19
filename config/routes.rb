@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   scope :api, module: :v1, constraints: Api::VersionService.new(:v1, true) do
     namespace :users do
       resource :registration, only: :create
-      get '/verification', to: 'verifications#index'
+      resource :verification, only: :show
     end
   end
 end
