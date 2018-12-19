@@ -20,7 +20,7 @@
     + Body
 
             {
-              "email": "monte@mante.biz",
+              "email": "macvon@keeling.info",
               "password": "123456",
               "password_confirmation": "123456"
             }
@@ -38,7 +38,7 @@
                 "id": "1",
                 "type": "user",
                 "attributes": {
-                  "email": "monte@mante.biz"
+                  "email": "macvon@keeling.info"
                 }
               },
               "jsonapi": {
@@ -97,6 +97,19 @@
 ### User verification [GET /api/users/verification]
 
 
++ Request verificatioin complete
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDUyOTc3OTN9.TRHLx15fVHXxPWX4mXvbI3NUe-QR8GlvqGPaTkayKj4`
+
+    + Headers
+
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+
++ Response 200
+
+    + Headers
+
+            Content-Type: text/plain; charset=utf-8
+
 + Request verificatioin fails
 **GET**&nbsp;&nbsp;`/api/users/verification`
 
@@ -124,7 +137,7 @@
             }
 
 + Request verificatioin fails
-**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDUyMjg0NTd9.UWWi63a3eAmLw1IXC926jPdGXus4JTvy-MQRdxko7zs`
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NDUyOTc3OTN9.Wuw7aki5YXQsrwa1UE5AuwFNAJfkNxm3T3YMImMpOwE`
 
     + Headers
 
