@@ -14,7 +14,7 @@ RSpec.describe 'V1::Users::Registrations API', type: :request do
 
       it 'creates a new user' do
         expect(response).to be_created
-        expect(response).to match_json_schema('user/create')
+        expect(response).to match_json_schema('user/registration/create/create')
       end
 
       it 'sign up success', :dox do
@@ -27,7 +27,7 @@ RSpec.describe 'V1::Users::Registrations API', type: :request do
 
       it 'returns error' do
         expect(response).to be_unprocessable
-        expect(response).to match_json_schema('errors')
+        expect(response).to match_json_schema('user/registration/create/errors')
       end
 
       it 'sign up fails', :dox do
