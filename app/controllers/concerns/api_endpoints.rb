@@ -6,10 +6,8 @@ module ApiEndpoints
       end
 
       match.invalid do |result|
-
-        temp = result['contract.default'] ? result['contract.default'].errors : result[:errors]
-
-        render jsonapi_errors: temp,
+        errors = result['contract.default'] ? result['contract.default'].errors : result[:errors]
+        render jsonapi_errors: errors,
                class: {
                         'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors,
                         'Hash': V1::Lib::Representer::VerificationErrorsSerializer
