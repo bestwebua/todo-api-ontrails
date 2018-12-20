@@ -1,6 +1,9 @@
 module V1::Users::Verifications::Operation
   class Confirm < Trailblazer::Operation
-    step Rescue(JWT::DecodeError, handler: :invalid_token) { step :confirm_email! }, fail_fast: true
+    step Rescue(JWT::DecodeError, handler: :invalid_token) {
+      step :confirm_email!
+    }, fail_fast: true
+
     step :user_not_verified?
     fail :user_already_verified, fail_fast: true
     step :verify_user!
