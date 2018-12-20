@@ -1,8 +1,9 @@
 <h1>
-  <%= t('.hello', email: @user.email) %>
+  <%= t('.title') %>
 </h1>
 
 <p>
-  <%= t('.activate') %>
   <%= link_to t('.confirm'), @confirmation_url %>
+  <%= t('.message') %>: 
+  <%= @email %>
 </p>

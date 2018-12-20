@@ -1,6 +1,8 @@
 en:
   user_mailer:
     confirmation:
-      hello: Hello
-      activate: Activate your account
+      title: Email verification
       confirm: Confirm
+      message: my email
+      email: Email
+      confirmation_url: Confirmation url
