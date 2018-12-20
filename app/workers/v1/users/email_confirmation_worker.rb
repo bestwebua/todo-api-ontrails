@@ -3,8 +3,8 @@ module V1
     class EmailConfirmationWorker
       include Sidekiq::Worker
 
-      def perform(user, token, user_verification_path)
-        UserMailer.confirmation(user, token, user_verification_path).deliver_now
+      def perform(email, token, user_verification_path)
+        UserMailer.confirmation(email, token, user_verification_path).deliver_now
       end
     end
   end
