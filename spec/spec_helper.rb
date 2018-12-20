@@ -1,10 +1,4 @@
-require 'rspec_file_chef'
-
 RSpec.configure do |config|
-  RspecFileChef::FileChef.configure do |conf|
-    conf.rspec_path = File.expand_path(__dir__)
-  end
-
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

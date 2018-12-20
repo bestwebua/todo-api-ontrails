@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'database_cleaner'
+require 'rspec_file_chef'
 require 'dox'
+require 'sidekiq/testing'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -16,8 +18,7 @@ rescue ActiveRecord::PendingMigrationError => error
   exit 1
 end
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
-
+# Shoulda
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
@@ -25,6 +26,12 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+# RspecFileChef
+RspecFileChef::FileChef.configure do |conf|
+  conf.rspec_path = File.expand_path(__dir__)
+end
+
+# Dox
 Dir[Rails.root.join('spec/docs/**/*.rb')].each { |file| require file }
 
 Dox.configure do |config|
@@ -33,7 +40,18 @@ Dox.configure do |config|
   config.headers_whitelist = ['Accept', 'Authorization']
 end
 
+# JsonMatchers
 JsonMatchers.schema_root = 'spec/support/schemas'
+
+# Sidekiq
+RSpec::Sidekiq.configure do |config|
+  config.clear_all_enqueued_jobs = true
+  config.enable_terminal_colours = true
+  config.warn_when_jobs_not_processed_by_sidekiq = false
+end
+
+# RSpec helpers and global config
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
