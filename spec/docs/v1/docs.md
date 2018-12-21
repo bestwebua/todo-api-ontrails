@@ -20,7 +20,7 @@
     + Body
 
             {
-              "email": "macvon@keeling.info",
+              "email": "berneicehuels@okuneva.name",
               "password": "123456",
               "password_confirmation": "123456"
             }
@@ -38,7 +38,7 @@
                 "id": "1",
                 "type": "user",
                 "attributes": {
-                  "email": "macvon@keeling.info"
+                  "email": "berneicehuels@okuneva.name"
                 }
               },
               "jsonapi": {
@@ -98,7 +98,7 @@
 
 
 + Request verificatioin complete
-**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDUyOTc3OTN9.TRHLx15fVHXxPWX4mXvbI3NUe-QR8GlvqGPaTkayKj4`
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDU0Njg4Nzd9.pxbBr70DSdlDHPBnPF_6TaJSX-jKE6NbpRJnbZE6Pe8`
 
     + Headers
 
@@ -137,7 +137,7 @@
             }
 
 + Request verificatioin fails
-**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NDUyOTc3OTN9.Wuw7aki5YXQsrwa1UE5AuwFNAJfkNxm3T3YMImMpOwE`
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NDU0Njg4Nzd9.81gOwH1Yt0mjwhU1WTiVj32Yk3JkI-Y1biEnQry39t4`
 
     + Headers
 
