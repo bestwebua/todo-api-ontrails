@@ -15,10 +15,10 @@ rails api:v1:docs
 
 ## Technology summary
 
-* Ruby 2.5.3
-* Rails 5.2.2, trailblazer-rails, trailblazer-endpoint, reform-rails, jsonapi-rails
+* Ruby 2.5.3, Rails 5.2.2, PostgreSQL 9.5.14, Redis 3.0.6
+* App gems: ```trailblazer-rails, trailblazer-endpoint, reform-rails, jsonapi-rails, sidekiq```
 * Documentation: Dox, Aglio
-* Testing: rspec, rspec-rails, rspec_file_chef, factory_bot_rails, shoulda-matchers, faker, database_cleaner
+* Testing gems: ```rspec, rspec-rails, rspec_file_chef, factory_bot_rails, shoulda-matchers, faker, database_cleaner, letter_opener```
 
 ## Contributing
 
