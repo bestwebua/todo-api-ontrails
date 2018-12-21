@@ -1,5 +1,6 @@
 en:
   user_mailer:
+    subject: Email confirmation
     confirmation:
       title: Email verification
       confirm: Confirm
