@@ -17,6 +17,9 @@ module TodoApiOntrails
     config.load_defaults 5.2
     config.api_only = true
     config.active_job.queue_adapter = :sidekiq
+    config.test_framework = :rspec
+
     config.i18n.load_path += Dir["#{Rails.root}/config/locales/**/*.{rb,yml}"]
+    config.autoload_paths += Dir["#{config.root}/app/**/"]
   end
 end
