@@ -18,7 +18,7 @@ RSpec.describe V1::Users::UsersToDeleteQuery do
         stub_const('V1::Users::UsersToDeleteQuery::LIFETIME', 0)
       end
 
-      it 'returns not confirmed users' do
+      it 'returns not verificated users' do
         expect(subject.first.id).to eq(not_confirmed_user.id)
         expect(subject.count).to eq(1)
       end
