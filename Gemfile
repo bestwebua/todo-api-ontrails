@@ -9,6 +9,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'sidekiq'
+gem 'sidekiq-cron'
 
 # Auth
 gem 'bcrypt'
