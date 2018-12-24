@@ -20,7 +20,7 @@
     + Body
 
             {
-              "email": "berneicehuels@okuneva.name",
+              "email": "lanette@hegmann.io",
               "password": "123456",
               "password_confirmation": "123456"
             }
@@ -38,7 +38,7 @@
                 "id": "1",
                 "type": "user",
                 "attributes": {
-                  "email": "berneicehuels@okuneva.name"
+                  "email": "lanette@hegmann.io"
                 }
               },
               "jsonapi": {
@@ -66,20 +66,23 @@
               "errors": [
                 {
                   "title": "Invalid email",
-                  "detail": "Email can't be blank",
+                  "detail": "can't be blank",
                   "source": {
+                    "pointer": "/data/attributes/email"
                   }
                 },
                 {
                   "title": "Invalid password",
-                  "detail": "Password can't be blank",
+                  "detail": "can't be blank",
                   "source": {
+                    "pointer": "/data/attributes/password"
                   }
                 },
                 {
                   "title": "Invalid password",
-                  "detail": "Password is too short (minimum is 6 characters)",
+                  "detail": "is too short (minimum is 6 characters)",
                   "source": {
+                    "pointer": "/data/attributes/password"
                   }
                 }
               ],
@@ -98,7 +101,7 @@
 
 
 + Request verificatioin complete
-**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDU0Njg4Nzd9.pxbBr70DSdlDHPBnPF_6TaJSX-jKE6NbpRJnbZE6Pe8`
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NDU3NTAyMjl9.O0cicrQi25-bgo8uJJqI37JIUUEl6kWxghs4j--F1DU`
 
     + Headers
 
@@ -128,7 +131,11 @@
             {
               "errors": [
                 {
-                  "email_token": "Invalid or expired token. Please retry account confirmation"
+                  "title": "Invalid email_token",
+                  "detail": "Invalid or expired token. Please retry account confirmation",
+                  "source": {
+                    "pointer": "/data/attributes/email-token"
+                  }
                 }
               ],
               "jsonapi": {
@@ -137,7 +144,7 @@
             }
 
 + Request verificatioin fails
-**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NDU0Njg4Nzd9.81gOwH1Yt0mjwhU1WTiVj32Yk3JkI-Y1biEnQry39t4`
+**GET**&nbsp;&nbsp;`/api/users/verification?email_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NDU3NTAyMjl9.07PrMqkpU247KfHbP01CYwz53za0fv04KexQFHHL1L8`
 
     + Headers
 
@@ -154,7 +161,11 @@
             {
               "errors": [
                 {
-                  "user_account": "This user account has already been verified"
+                  "title": "Invalid user_account",
+                  "detail": "This user account has already been verified",
+                  "source": {
+                    "pointer": "/data/attributes/user-account"
+                  }
                 }
               ],
               "jsonapi": {
