@@ -7,6 +7,7 @@ Simple Todo RESTful JSON API with trailblazer abstraction and documentation. Imp
 2. Independent API documentation, [app_url]/api/documentation/v[version_number]
 3. Smart API versionization with default version, accepts version in headers
 4. User verification by email with queues via Redis and Sidekiq bundle
+5. Scheduled background task to find and erase not verificated users
 
 For rebuild current api doc just use:
 ```bash
