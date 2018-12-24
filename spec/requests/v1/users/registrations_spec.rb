@@ -12,26 +12,24 @@ RSpec.describe 'V1::Users::Registrations API', type: :request do
     context 'valid request' do
       before { post '/api/users/registration', params: valid_attributes.to_json, headers: valid_headers }
 
-      it 'creates a new user' do
+      it 'sign up success', :dox do
         expect(response).to be_created
-        expect(response).to match_json_schema('user/registration/create/create')
       end
 
-      it 'sign up success', :dox do
-        expect(response).to have_http_status(201)
+      it 'creates a new user' do
+        expect(response).to match_json_schema('user/registration/create/create')
       end
     end
 
     context 'invalid request' do
       before { post '/api/users/registration' }
 
-      it 'returns error' do
+      it 'sign up fails', :dox do
         expect(response).to be_unprocessable
-        expect(response).to match_json_schema('errors')
       end
 
-      it 'sign up fails', :dox do
-        expect(response).to have_http_status(422)
+      it 'returns error' do
+        expect(response).to match_json_schema('errors')
       end
     end
   end

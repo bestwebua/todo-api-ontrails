@@ -10,12 +10,9 @@ RSpec.describe V1::Users::Verifications::Operation::Confirm do
   describe 'Success' do
     let(:params) { valid_params }
 
-    specify do
-      expect(result).to be_success
-    end
-
     it 'verifies user' do
       expect { result }.to change { user.reload.verified }.from(false).to(true)
+      expect(result).to be_success
     end
   end
 

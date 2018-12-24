@@ -14,12 +14,8 @@ RSpec.describe 'V1::Users::Verifications API', type: :request do
       context 'valid request' do
         before { get confirmation_url }
 
-        it 'confirm user' do
-          expect(response).to be_ok
-        end
-
         it 'verificatioin complete', :dox do
-          expect(response).to have_http_status(200)
+          expect(response).to be_ok
         end
       end
     end
@@ -28,13 +24,12 @@ RSpec.describe 'V1::Users::Verifications API', type: :request do
       context 'invalid request' do
         before { get '/api/users/verification' }
 
-        it 'returns error' do
+        it 'verificatioin fails', :dox do
           expect(response).to be_unprocessable
-          expect(response).to match_json_schema('errors')
         end
 
-        it 'verificatioin fails', :dox do
-          expect(response).to have_http_status(422)
+        it 'returns error' do
+          expect(response).to match_json_schema('errors')
         end
       end
 
@@ -44,13 +39,12 @@ RSpec.describe 'V1::Users::Verifications API', type: :request do
           get confirmation_url
         end
 
-        it 'returns error' do
+        it 'verificatioin fails', :dox do
           expect(response).to be_unprocessable
-          expect(response).to match_json_schema('errors')
         end
 
-        it 'verificatioin fails', :dox do
-          expect(response).to have_http_status(422)
+        it 'returns error' do
+          expect(response).to match_json_schema('errors')
         end
       end
     end

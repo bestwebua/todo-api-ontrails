@@ -5,12 +5,12 @@ RSpec.describe V1::Users::UsersToDeleteQuery do
     subject { described_class.call }
 
     context 'users not found' do
-      specify { expect(subject).to be_empty }
+      it { is_expected.to be_empty }
     end
 
     context 'users found' do
       let(:not_confirmed_user) { create(:user) }
-      let(:confirmed_user) { create(:user) }
+      let!(:confirmed_user) { create(:user) }
 
       before do
         not_confirmed_user
