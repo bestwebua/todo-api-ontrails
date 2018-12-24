@@ -59,3 +59,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
+
+Sidekiq::Cron::Job.create(
+  name: 'Erase not verificated users - every 24h',
+  cron: '* */24 * * *',
+  class: 'V1::Users::EraseNotVerificatedUsersWorker'
+)
