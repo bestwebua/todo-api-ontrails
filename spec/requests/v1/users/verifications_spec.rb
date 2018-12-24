@@ -30,7 +30,7 @@ RSpec.describe 'V1::Users::Verifications API', type: :request do
 
         it 'returns error' do
           expect(response).to be_unprocessable
-          expect(response).to match_json_schema('user/verification/confirm/errors')
+          expect(response).to match_json_schema('errors')
         end
 
         it 'verificatioin fails', :dox do
@@ -46,7 +46,7 @@ RSpec.describe 'V1::Users::Verifications API', type: :request do
 
         it 'returns error' do
           expect(response).to be_unprocessable
-          expect(response).to match_json_schema('user/verification/confirm/errors')
+          expect(response).to match_json_schema('errors')
         end
 
         it 'verificatioin fails', :dox do

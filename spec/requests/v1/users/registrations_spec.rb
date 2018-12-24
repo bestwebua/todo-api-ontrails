@@ -27,7 +27,7 @@ RSpec.describe 'V1::Users::Registrations API', type: :request do
 
       it 'returns error' do
         expect(response).to be_unprocessable
-        expect(response).to match_json_schema('user/registration/create/errors')
+        expect(response).to match_json_schema('errors')
       end
 
       it 'sign up fails', :dox do
