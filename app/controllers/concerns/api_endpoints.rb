@@ -9,7 +9,7 @@ module ApiEndpoints
         errors = result['contract.default'] ? result['contract.default'].errors : result[:errors]
         render jsonapi_errors: errors,
                class: {
-                        'Reform::Form::ActiveModel::Errors': JSONAPI::Rails::SerializableActiveModelErrors,
+                        'Reform::Form::ActiveModel::Errors': V1::Lib::Representer::ReformErrorsSerializer,
                         'Hash': V1::Lib::Representer::VerificationErrorsSerializer
                       },
                status: :unprocessable_entity
