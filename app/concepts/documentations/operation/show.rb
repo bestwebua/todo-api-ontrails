@@ -9,7 +9,7 @@ module Documentations::Operation
     end
 
     def file_not_found(ctx, **)
-      ctx[:errors] = { doc_path: I18n.t('errors.file_not_found') }
+      ctx[:errors] = { doc_path: [I18n.t('errors.file_not_found')] }
     end
   end
 end
