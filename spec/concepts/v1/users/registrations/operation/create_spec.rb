@@ -14,19 +14,12 @@ RSpec.describe V1::Users::Registrations::Operation::Create do
   describe 'Success' do
     let(:params) { valid_params }
 
-    before do
-      allow(V1::Lib::Step::Mailers::Users::CreateConfirmation).to receive(:call).and_return(true)
-    end
-
     it 'creates user' do
+      expect(V1::Lib::Step::Mailers::Users::CreateConfirmation).to receive(:call).and_return(true)
+
       expect { result }.to change(User, :count).from(0).to(1)
       expect(result[:model]).to be_persisted
       expect(result).to be_success
-    end
-
-    it 'calls shared step' do
-      expect(V1::Lib::Step::Mailers::Users::CreateConfirmation).to receive(:call)
-      result
     end
   end
 
