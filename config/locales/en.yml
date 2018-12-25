@@ -2,3 +2,5 @@ en:
   errors:
     file_not_found: Documentation api-file not build yet or requested api version not exists.
     password_mismatch: passwords doesn't match
+    invalid_token: Invalid or expired token. Please retry account confirmation
+    user_already_verified: This user account has already been verified

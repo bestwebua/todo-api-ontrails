@@ -6,7 +6,7 @@ module DocumentationEndpoints
       end
 
       match.not_exists do |result|
-        render html: result[:errors][:doc_path], status: :not_found
+        render html: result[:errors][:doc_path].join(', '), status: :not_found
       end
     end
   end

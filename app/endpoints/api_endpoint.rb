@@ -5,7 +5,14 @@ class ApiEndpoint < Trailblazer::Endpoint
       resolve: ->(result) { result }
     ),
     invalid: Dry::Matcher::Case.new(
-      match:   ->(result) { result.failure? && result['result.contract.default'] && result['result.contract.default'].failure? },
+      match:   ->(result) { result.failure? && (
+                            result[:errors] ||
+                            result['result.contract.default'] &&
+                            result['result.contract.default'].failure?) },
+      resolve: ->(result) { result }
+    ),
+    verified: Dry::Matcher::Case.new(
+      match:   ->(result) { result.success? && result[:model].verified? },
       resolve: ->(result) { result }
     )
   )

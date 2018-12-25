@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
   get '/', to: redirect('api/documentation/v1')
 
   scope :api do
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
   scope :api, module: :v1, constraints: Api::VersionService.new(:v1, true) do
     namespace :users do
       resource :registration, only: :create
+      resource :verification, only: :show
     end
   end
 end
