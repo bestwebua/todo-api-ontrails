@@ -4,3 +4,4 @@ en:
     password_mismatch: passwords doesn't match
     invalid_token: Invalid or expired token. Please retry account confirmation
     user_already_verified: This user account has already been verified
+    invalid_credentials: Invalid credentials
