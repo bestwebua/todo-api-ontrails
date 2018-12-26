@@ -1,6 +1,6 @@
-module V1::Auth::Sessions::Operation
+module V1::Users::Sessions::Operation
   class Create < Trailblazer::Operation
-    step V1::Lib::Step::Auth::Users::Authenticate
+    step V1::Lib::Step::Auth::AuthenticateUser
     fail :invalid_credentials, fail_fast: true
 
     def invalid_credentials(ctx, **)

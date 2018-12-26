@@ -1,5 +1,5 @@
-module V1::Lib::Step::Auth::Users
-  class Authenticate
+module V1::Lib::Step::Auth
+  class AuthenticateUser
     # shared step for create new session, change credentials, erase account
 
     extend Uber::Callable

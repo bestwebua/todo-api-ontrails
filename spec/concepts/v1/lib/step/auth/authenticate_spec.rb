@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe V1::Lib::Step::Auth::Users::Authenticate do
+RSpec.describe V1::Lib::Step::Auth::AuthenticateUser do
   describe '.call' do
     subject { described_class.call(user_credentials) }
     let!(:user) { create(:user) }
