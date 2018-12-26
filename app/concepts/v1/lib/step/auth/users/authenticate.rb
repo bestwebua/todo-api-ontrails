@@ -1,5 +1,9 @@
-module V1::Lib::Service
-  class AuthenticateUser
+module V1::Lib::Step::Auth::Users
+  class Authenticate
+    # shared step for create new session, change credentials, erase account
+
+    extend Uber::Callable
+
     def initialize(email:, password:)
       @email, @password = email, password
     end
@@ -8,8 +12,9 @@ module V1::Lib::Service
       user
     end
 
-    def self.call(**user_credentials)
-      new(user_credentials).call
+    def self.call(ctx, **)
+      user_credentials = ctx[:params].slice(:email, :password).symbolize_keys
+      ctx[:model] = new(user_credentials).call
     end
 
     private

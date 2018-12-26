@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe V1::Lib::Service::AuthenticateUser do
+RSpec.describe V1::Lib::Step::Auth::Users::Authenticate do
   describe '.call' do
     subject { described_class.call(user_credentials) }
     let!(:user) { create(:user) }
 
     context 'valid credentials' do
-      let(:user_credentials) { { email: user.email, password: user.password } }
+      let(:user_credentials) { { params: { email: user.email, password: user.password } } }
       it { is_expected.to be_an_instance_of(User) }
     end
 
     context 'invalid credentials' do
-      let(:user_credentials) { { email: Faker::Internet.email, password: Faker::Internet.password } }
+      let(:user_credentials) { { params: { email: Faker::Internet.email, password: Faker::Internet.password } } }
       it { is_expected.to be(false) }
     end
   end
