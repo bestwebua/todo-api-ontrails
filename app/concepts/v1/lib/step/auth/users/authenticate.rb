@@ -4,7 +4,7 @@ module V1::Lib::Step::Auth::Users
 
     extend Uber::Callable
 
-    def initialize(email:, password:)
+    def initialize(email: nil, password: nil)
       @email, @password = email, password
     end
 
