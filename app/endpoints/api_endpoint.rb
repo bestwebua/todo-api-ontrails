@@ -6,13 +6,17 @@ class ApiEndpoint < Trailblazer::Endpoint
     ),
     invalid: Dry::Matcher::Case.new(
       match:   ->(result) { result.failure? && (
-                            result[:errors] ||
+                            result[:errors][:unprocessable_entity] ||
                             result['result.contract.default'] &&
                             result['result.contract.default'].failure?) },
       resolve: ->(result) { result }
     ),
     verified: Dry::Matcher::Case.new(
       match:   ->(result) { result.success? && result[:model].verified? },
+      resolve: ->(result) { result }
+    ),
+    unauthorized: Dry::Matcher::Case.new(
+      match:   ->(result) { result[:errors][:unauthorized] },
       resolve: ->(result) { result }
     )
   )

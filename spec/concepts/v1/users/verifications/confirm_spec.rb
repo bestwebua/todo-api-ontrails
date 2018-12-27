@@ -20,7 +20,7 @@ RSpec.describe V1::Users::Verifications::Operation::Confirm do
     context 'invalid token' do
       let(:invalid_email_token) { invalid_token_generator(:email_token, user.id) }
       let(:params) { valid_params.merge(email_token: invalid_email_token) }
-      let(:errors) { { email_token: [I18n.t('errors.invalid_token')] } }
+      let(:errors) { { unprocessable_entity: { email_token: [I18n.t('errors.invalid_token')] } } }
 
       include_examples 'has validation errors'
     end
@@ -28,7 +28,7 @@ RSpec.describe V1::Users::Verifications::Operation::Confirm do
     context 'user already verified' do
       let(:params) { valid_params }
       before { user.toggle!(:verified) }
-      let(:errors) { { user_account: [I18n.t('errors.user_already_verified')] } }
+      let(:errors) { { unprocessable_entity: { user_account: [I18n.t('errors.user_already_verified')] } } }
 
       include_examples 'has validation errors'
     end

@@ -1,5 +1,7 @@
 module V1::Users::Verifications::Operation
   class Confirm < Trailblazer::Operation
+    step V1::Lib::Step::Error::InitializeCustomErrors
+
     step Rescue(JWT::DecodeError, handler: :invalid_token) {
       step :confirm_email!
     }, fail_fast: true
@@ -14,8 +16,7 @@ module V1::Users::Verifications::Operation
     end
 
     def invalid_token(_exception, ctx)
-      ctx[:errors] ||= {}
-      ctx[:errors][:email_token] = [I18n.t('errors.invalid_token')]
+      V1::Lib::Service::AddCustomError.(ctx, :unprocessable_entity, email_token: I18n.t('errors.invalid_token'))
     end
 
     def user_not_verified?(ctx, **)
@@ -23,8 +24,7 @@ module V1::Users::Verifications::Operation
     end
 
     def user_already_verified(ctx, **)
-      ctx[:errors] ||= {}
-      ctx[:errors][:user_account] = [I18n.t('errors.user_already_verified')]
+      V1::Lib::Service::AddCustomError.(ctx, :unprocessable_entity, user_account: I18n.t('errors.user_already_verified'))
     end
 
     def verify_user!(ctx, **)
