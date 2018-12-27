@@ -5,3 +5,4 @@ en:
     invalid_token: Invalid or expired token. Please retry account confirmation
     user_already_verified: This user account has already been verified
     invalid_credentials: Invalid credentials
+    user_not_verified: Account not verified. Please verify your account at first
