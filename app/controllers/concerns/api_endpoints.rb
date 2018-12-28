@@ -31,6 +31,6 @@ module ApiEndpoints
   end
 
   def endpoint(operation_class, _options = {}, &block)
-    ApiEndpoint.call(operation_class, default_handler, { params: params.to_unsafe_h }, &block)
+    ApiEndpoint.call(operation_class, default_handler, { params: params.to_unsafe_h, request: request }, &block)
   end
 end
