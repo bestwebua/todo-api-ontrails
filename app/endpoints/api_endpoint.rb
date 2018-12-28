@@ -1,7 +1,8 @@
 class ApiEndpoint < Trailblazer::Endpoint
   Matcher = Dry::Matcher.new(
     created: Dry::Matcher::Case.new(
-      match:   ->(result) { result.success? && result['model.action'] == :new },
+      match:   ->(result) { result.success? && (
+                            result['model.action'] == :new || result[:tokens]) },
       resolve: ->(result) { result }
     ),
     invalid: Dry::Matcher::Case.new(
