@@ -1,7 +1,5 @@
 module V1::Users::Sessions::Operation
   class Create < Trailblazer::Operation
-    include JWTSessions::RailsAuthorization
-
     step V1::Lib::Step::Error::InitializeCustomErrors
 
     step V1::Lib::Step::Auth::AuthenticateUser
