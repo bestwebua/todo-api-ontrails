@@ -4,6 +4,10 @@ module V1
       def create
         endpoint V1::Users::Sessions::Operation::Create
       end
+
+      def destroy
+        endpoint V1::Users::Sessions::Operation::Destroy
+      end
     end
   end
 end
