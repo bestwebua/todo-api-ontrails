@@ -20,7 +20,8 @@ module ControllerSpecHelper
     end
   end
 
-  def request(headers)
-
-  end
+  # def request(headers)
+  # need to implement request helper, for ctx[:request]
+  # for V1::Lib::Step::Auth::AuthorizeUser testing
+  # end
 end
