@@ -18,6 +18,7 @@ RSpec.describe V1::Users::Registrations::Operation::Create do
       expect(V1::Lib::Step::Mailers::Users::CreateConfirmation).to receive(:call).and_return(true)
 
       expect { result }.to change(User, :count).from(0).to(1)
+      expect(result[:errors]).not_to be(nil)
       expect(result[:model]).to be_persisted
       expect(result).to be_success
     end

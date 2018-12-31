@@ -16,7 +16,7 @@ module V1::Users::Verifications::Operation
     end
 
     def invalid_token(_exception, ctx)
-      V1::Lib::Service::AddCustomError.(ctx, :unprocessable_entity, email_token: I18n.t('errors.invalid_token'))
+      V1::Lib::Service::AddCustomError.(ctx, :unprocessable_entity, email_token: I18n.t('errors.invalid_email_token'))
     end
 
     def user_not_verified?(ctx, **)

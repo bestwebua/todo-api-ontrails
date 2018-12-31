@@ -11,10 +11,12 @@ module V1::Lib::Step::Auth
 
     def call
       authorize_by_access_header!
+      payload
     end
 
-    def self.call(_ctx, request:, **)
-      new(request).call
+    def self.call(ctx, request:, **)
+      ctx[:payload] = new(request).call
+      ctx[:model] = User.find_by(id: ctx[:payload]['user_id'])
     end
   end
 end
