@@ -20,7 +20,7 @@ RSpec.describe V1::Users::Verifications::Operation::Confirm do
     context 'invalid token' do
       let(:invalid_email_token) { invalid_token_generator(:email_token, user.id) }
       let(:params) { valid_params.merge(email_token: invalid_email_token) }
-      let(:errors) { { unprocessable_entity: { email_token: [I18n.t('errors.invalid_token')] } } }
+      let(:errors) { { unprocessable_entity: { email_token: [I18n.t('errors.invalid_email_token')] } } }
 
       include_examples 'has validation errors'
     end
