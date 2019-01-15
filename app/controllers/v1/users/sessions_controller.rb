@@ -6,7 +6,8 @@ module V1
       end
 
       def destroy
-        endpoint V1::Users::Sessions::Operation::Destroy
+        authorize_by_access_header!
+        endpoint V1::Users::Sessions::Operation::Destroy, payload: payload
       end
     end
   end
