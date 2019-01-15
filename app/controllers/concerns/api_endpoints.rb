@@ -11,7 +11,7 @@ module ApiEndpoints
         render jsonapi_errors: errors,
                class: {
                         'Reform::Form::ActiveModel::Errors': V1::Lib::Representer::ReformErrorsSerializer,
-                        'Hash': V1::Lib::Representer::CustomErrorsSerializer
+                        Hash: V1::Lib::Representer::CustomErrorsSerializer
                       },
                status: :unprocessable_entity
       end
@@ -19,7 +19,7 @@ module ApiEndpoints
       # 401 Unauthorized
       match.unauthorized do |result|
         render jsonapi_errors: result[:errors][:unauthorized],
-               class: { 'Hash': V1::Lib::Representer::CustomErrorsSerializer },
+               class: { Hash: V1::Lib::Representer::CustomErrorsSerializer },
                status: :unauthorized
       end
 
@@ -31,6 +31,6 @@ module ApiEndpoints
   end
 
   def endpoint(operation_class, _options = {}, &block)
-    ApiEndpoint.call(operation_class, default_handler, { params: params.to_unsafe_h, request: request }, &block)
+    ApiEndpoint.call(operation_class, default_handler, { params: params.to_unsafe_h }, &block)
   end
 end
