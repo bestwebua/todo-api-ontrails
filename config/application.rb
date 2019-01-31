@@ -16,6 +16,7 @@ module TodoApiOntrails
   class Application < Rails::Application
     config.load_defaults 5.2
     config.api_only = true
+    config.i18n.fallbacks = true
     config.active_job.queue_adapter = :sidekiq
     config.test_framework = :rspec
 

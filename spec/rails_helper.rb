@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'database_cleaner'
 require 'rspec_file_chef'
 require 'dox'
 require 'sidekiq/testing'
@@ -63,17 +62,6 @@ RSpec.configure do |config|
   config.include RequestSpecHelper
   config.include ControllerSpecHelper
   config.include ConceptSpecHelper
-
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-    DatabaseCleaner.strategy = :transaction
-  end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
 
   config.after(:each, :dox) do |example|
     example.metadata[:request] = request
