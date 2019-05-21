@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     namespace :users do
       resource :registration, only: :create
       resource :verification, only: :show
+      resource :session, only: %i[create destroy]
     end
   end
 end

@@ -1,5 +1,6 @@
 module V1::Users::Registrations::Operation
   class Create < Trailblazer::Operation
+    step V1::Lib::Step::Error::InitializeCustomErrors
     step Model(User, :new)
     step Contract::Build(constant: V1::Users::Registrations::Contract::Create)
     step Contract::Validate()
